@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Carrinho {
-	private ArrayList<ItemCarrinho> itens = new ArrayList<>();
+    private ArrayList<ItemCarrinho> itens = new ArrayList<>();
     private double valorTotal = 0.0;
     private Scanner sc;
     
@@ -19,20 +19,21 @@ public class Carrinho {
 	    
 	    //Adicionando os produtos de venda
 	    listaProdutos.add(new Produto(1, "Banana", 2.5));
-        listaProdutos.add(new Produto(2, "Maca", 1.75));
-        listaProdutos.add(new Produto(3, "Pera", 3.0));
-        listaProdutos.add(new Produto(4, "Uva", 5.0));
-        listaProdutos.add(new Produto(5, "Salada de Frutas", 8.0));
+            listaProdutos.add(new Produto(2, "Maca", 1.75));
+            listaProdutos.add(new Produto(3, "Pera", 3.0));
+            listaProdutos.add(new Produto(4, "Uva", 5.0));
+            listaProdutos.add(new Produto(5, "Salada de Frutas", 8.0));
         
-        boolean continuarComprando = true;
+            boolean continuarComprando = true;
         
-        System.out.println("Bem vindo ao Hortifruti !! Abaixo voce ira ver os produtos disponiveis: \n");
+            System.out.println("Bem vindo ao Hortifruti !! Abaixo voce ira ver os produtos disponiveis: \n");
         
-        while (continuarComprando) {
-            for (Produto produto : listaProdutos) {
-                System.out.println("ID: " + produto.getId() + ", Nome: " + produto.getNome() + ", Preco: " + produto.getPreco());
+            while (continuarComprando) {
+        	for (Produto produto : listaProdutos) {
+                	System.out.println("ID: " + produto.getId() + ", Nome: " + produto.getNome() + ", Preco: " + produto.getPreco());
             }
-            System.out.print("Escolha o produto que deseja comprar colocando seu numero de ID: \n");
+            
+	    System.out.print("Escolha o produto que deseja comprar colocando seu numero de ID: \n");
             int idProduto = sc.nextInt();
             
             System.out.print("Digite a quantidade desejada: \n");
