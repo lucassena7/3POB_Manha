@@ -1,7 +1,7 @@
 package br.edu.faeterj;
 
 public class Produto {
-	private int id;
+    private int id;
     private String nome;
     private double preco;
     
