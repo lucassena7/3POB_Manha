@@ -1,10 +1,10 @@
 package br.edu.faeterj;
 
-public class itemCarrinho {
+public class ItemCarrinho {
 	private int idProduto;
-    private int quantidade;
+    	private int quantidade;
     
-	public itemCarrinho(int idProduto, int quantidade) {
+	public ItemCarrinho(int idProduto, int quantidade) {
 		this.idProduto = idProduto;
 		this.quantidade = quantidade;
 	}
