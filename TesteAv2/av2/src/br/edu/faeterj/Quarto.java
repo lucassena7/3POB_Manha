@@ -18,33 +18,48 @@ public class Quarto {
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getNomeQuarto() {
 		return nomeQuarto;
 	}
+	
 	public void setNomeQuarto(String nomeQuarto) {
 		this.nomeQuarto = nomeQuarto;
 	}
+	
 	public int getQtdeCamas() {
 		return qtdeCamas;
 	}
+	
 	public void setQtdeCamas(int qtdeCamas) {
 		this.qtdeCamas = qtdeCamas;
 	}
+	
 	public boolean isTemBanheiro() {
 		return temBanheiro;
 	}
+	
 	public void setTemBanheiro(boolean temBanheiro) {
 		this.temBanheiro = temBanheiro;
 	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
+	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 
-    
+	public String toString() {
+		 return "\nId " + id +
+				 "\nNome do Quarto: " + nomeQuarto + 
+				 "\nQuantidade de Camas: " + qtdeCamas + 
+	            "\nTem banheiro: " + temBanheiro +
+		 		"\nDescricao: " + descricao + "\n";
+	    }
 }

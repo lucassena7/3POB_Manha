@@ -2,10 +2,10 @@ package br.edu.faeterj;
 
 public class Main {
     public static void main(String[] args) {
-        ClienteManager clienteManager = new ClienteManager();
-        QuartoManager quartoManager = new QuartoManager();
-        CamaManager camaManager = new CamaManager();
-        ReservaManager reservaManager = new ReservaManager();
+        ClienteMenu clienteManager = new ClienteMenu();
+        QuartoMenu quartoManager = new QuartoMenu();
+        CamaMenu camaManager = new CamaMenu();
+        ReservaMenu reservaManager = new ReservaMenu();
 
         // Incluindo um cliente
         Cliente cliente1 = new Cliente(
