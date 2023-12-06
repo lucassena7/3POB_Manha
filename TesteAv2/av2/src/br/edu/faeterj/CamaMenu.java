@@ -8,8 +8,47 @@ import java.util.*;
 public class CamaMenu {
     private List<Cama> camas = new ArrayList<>();
     private Scanner sc;
+    private int opcao;
     
-    public void incluirCama(Cama cama) {
+    public CamaMenu(Scanner sc) {
+		this.sc = sc;
+	}
+
+    public void Processamento() {
+        do {
+            System.out.println("Digite a opcao:");
+            System.out.println("1- Incluir Cama: ");
+            System.out.println("2- Alterar Cama: ");
+            System.out.println("3- Excluir Cama: ");
+            System.out.println("4- Listar Camas: ");
+            System.out.println("5- Sair ");
+
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    incluirCama(sc);
+                    break;
+                case 2:
+                    alterarCama(sc);
+                    break;
+                case 3:
+                    excluirCama(sc);
+                    break;
+                case 4:
+                    listarCamas();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente!");
+            }
+        } while (opcao != 5);
+        //sc.close();
+    }
+    
+	public void incluirCama(Scanner sc) {
     	int id;
     	int codigoCama;
         boolean ehBeliche;
@@ -34,9 +73,9 @@ public class CamaMenu {
         
         sc.nextLine();
         System.out.println("Digite a Posicao da cama: ");
-        descricao = sc.nextLine();
+        posicao = sc.nextLine();
         
-        sc.nextLine();
+        //sc.nextLine();
         System.out.println("Digite a Descricao da cama: ");
         descricao = sc.nextLine();
         
@@ -46,7 +85,7 @@ public class CamaMenu {
         System.out.println("\nCama inserido com sucesso !");
     }
    
-    public void AlterarCama(Cama cama) {
+    public void alterarCama(Scanner sc) {
         int id, op;
         boolean encontrado = false;
         sc.nextLine();
@@ -69,6 +108,7 @@ public class CamaMenu {
                 	altCama.setEhBeliche(false);
                 }
                 
+                sc.nextLine();
                 System.out.println("Digite a nova Posicao da cama: ");
                 String novaPosicao = sc.nextLine();
                 altCama.setPosicao(novaPosicao);
@@ -86,7 +126,7 @@ public class CamaMenu {
         }
     }
 
-    public void excluirCama(Cama cama) {
+    public void excluirCama(Scanner sc) {
     	int id;
     	boolean encontrado = false;
     	
@@ -110,6 +150,6 @@ public class CamaMenu {
 
     public void listarCamas() {
     	System.out.println("Camas: \n");
-    	System.out.println(camas);
+    	System.out.println(camas.toString());
     }
 }

@@ -56,7 +56,7 @@ public class Cama {
 	}
 	
 	public String toString() {
-		 return "\nId " + id +
+		 return "\nId: " + id +
 				 "\nCodigo da Cama: " + codigoCama + 
 				 "\nEh beliche: " + ehBeliche + 
 	            "\nPosicao da Cama: " + posicao +

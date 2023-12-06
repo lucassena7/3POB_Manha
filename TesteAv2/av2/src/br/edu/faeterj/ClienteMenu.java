@@ -7,8 +7,47 @@ import java.util.*;
 public class ClienteMenu {
     private List<Cliente> clientes = new ArrayList<>();
     private Scanner sc;
+    private int opcao;
+    
+    public ClienteMenu(Scanner sc) {
+		this.sc = sc;
+	}
+    
+    public void Processamento() {
+        do {
+            System.out.println("Digite a opcao:");
+            System.out.println("1- Incluir Cliente: ");
+            System.out.println("2- Alterar Cliente: ");
+            System.out.println("3- Excluir Cliente: ");
+            System.out.println("4- Listar Clientes: ");
+            System.out.println("5- Sair ");
 
-    public void incluirCliente(Cliente cliente) {
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    incluirCliente(sc);
+                    break;
+                case 2:
+                    alterarCliente(sc);
+                    break;
+                case 3:
+                    excluirCliente(sc);
+                    break;
+                case 4:
+                    listarClientes();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente!");
+            }
+        } while (opcao != 5);
+        //sc.close();
+    }
+
+	public void incluirCliente(Scanner sc) {
     	String nome= "";
         String endereco= "";
         String postalCode= "";
@@ -51,7 +90,7 @@ public class ClienteMenu {
         System.out.println("\nCliente inserido com sucesso !");
     }
     
-    public void AlterarCliente(Cliente cliente) {
+    public void alterarCliente(Scanner sc) {
         String cpf;
         boolean encontrado = false;
         sc.nextLine();
@@ -98,7 +137,7 @@ public class ClienteMenu {
         }
     }
     
-    public void excluirCliente(Cliente cliente) {
+    public void excluirCliente(Scanner sc) {
     	String cpf;
    	 	sc.nextLine();
    	 	System.out.println("Digite o CPF de quem voce deseja alterar: ");
@@ -121,7 +160,7 @@ public class ClienteMenu {
         }
    }
     
-    public void ListarClientes() {
+    public void listarClientes() {
     	System.out.println("Clientes: \n");
     	System.out.println(clientes);
     }

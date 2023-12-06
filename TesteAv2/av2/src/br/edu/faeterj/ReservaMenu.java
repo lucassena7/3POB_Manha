@@ -7,8 +7,47 @@ import java.util.*;
 public class ReservaMenu {
     private List<Reserva> reservas = new ArrayList<>();
     private Scanner sc;
+    int opcao;
     
-    public void incluirReserva(Reserva reserva) {
+    public ReservaMenu(Scanner sc) {
+		this.sc = sc;
+	}
+
+    public void Processamento() {
+        do {
+            System.out.println("Digite a opcao:");
+            System.out.println("1- Incluir Reserva: ");
+            System.out.println("2- Alterar Reserva: ");
+            System.out.println("3- Excluir Reserva: ");
+            System.out.println("4- Listar Reservas: ");
+            System.out.println("5- Sair ");
+
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    incluirReserva(sc);
+                    break;
+                case 2:
+                    alterarReserva(sc);
+                    break;
+                case 3:
+                    excluirReserva(sc);
+                    break;
+                case 4:
+                    listarReservas();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente!");
+            }
+        } while (opcao != 5);
+        //sc.close();
+    }
+    
+	public void incluirReserva(Scanner sc) {
     	int id;
     	int idQuarto;
     	int idCama;
@@ -29,11 +68,9 @@ public class ReservaMenu {
         System.out.println("Digite o CPF do Cliente: ");
         cpfCliente = sc.nextLine();
         
-        sc.nextLine();
         System.out.println("Digite a Data de entrada: ");
         dataEntrada = sc.nextLine();
-        
-        sc.nextLine();
+       
         System.out.println("Digite a Data de saida: ");
         dataSaida = sc.nextLine();
         
@@ -43,7 +80,7 @@ public class ReservaMenu {
         System.out.println("\nReserva feita com sucesso !");
     }
 
-    public void AlterarReserva(Reserva reserva) {
+    public void alterarReserva(Scanner sc) {
         int id;
         boolean encontrado = false;
         sc.nextLine();
@@ -61,6 +98,7 @@ public class ReservaMenu {
                 int novoIdCReserva = sc.nextInt();
                 altReserva.setIdCama(novoIdCReserva);
                 
+                sc.nextLine();
                 System.out.println("Digite o novo cpf: ");
                 String novoCpf = sc.nextLine();
                 altReserva.setCpfCliente(novoCpf);
@@ -82,7 +120,7 @@ public class ReservaMenu {
         }
     }
 
-    public void excluirReserva(Reserva reserva) {
+    public void excluirReserva(Scanner sc) {
     	int id;
     	boolean encontrado = false;
     	
@@ -100,7 +138,7 @@ public class ReservaMenu {
             }
         }
         if (!encontrado) {
-       	 System.out.println("Nao foi possivel localizar uma Resera com este numero de Id");
+       	 System.out.println("Nao foi possivel localizar uma Reserva com este numero de Id");
         }
    }
 

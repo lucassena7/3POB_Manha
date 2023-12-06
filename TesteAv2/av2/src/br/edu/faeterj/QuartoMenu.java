@@ -4,16 +4,55 @@ import java.util.*;
 
 public class QuartoMenu {
     private List<Quarto> quartos = new ArrayList<>();
-    private Scanner sc;
+    private Scanner sc; 
+    private int opcao;
+    
+    public QuartoMenu(Scanner sc) {
+		this.sc = sc;
+	}
 
-    public void incluirQuarto(Quarto quarto) {
+    public void Processamento() {
+        do {
+            System.out.println("Digite a opcao:");
+            System.out.println("1- Incluir Quarto: ");
+            System.out.println("2- Alterar Quarto: ");
+            System.out.println("3- Excluir Quarto: ");
+            System.out.println("4- Listar Quartos: ");
+            System.out.println("5- Sair ");
+
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    incluirQuarto(sc);
+                    break;
+                case 2:
+                    alterarQuarto(sc);
+                    break;
+                case 3:
+                    excluirQuarto(sc);
+                    break;
+                case 4:
+                    listarQuartos();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente!");
+            }
+        } while (opcao != 5);
+        //sc.close();
+    }
+    
+	public void incluirQuarto(Scanner sc) {
     	int id;
     	String nomeQuarto=  "";
         int qtdeCamas;
         boolean temBanheiro;
         int op;
         String descricao= "";
-
+        
         System.out.println("Digite o Id do Quarto: ");
         id = sc.nextInt();
         
@@ -43,7 +82,7 @@ public class QuartoMenu {
         System.out.println("\nQuarto inserido com sucesso !");
     }
 
-    public void AlterarQuarto(Quarto quarto) {
+    public void alterarQuarto(Scanner sc) {
         int id, op;
         boolean encontrado = false;
         sc.nextLine();
@@ -53,6 +92,7 @@ public class QuartoMenu {
         
         for (Quarto altQuarto : quartos) {
             if (altQuarto.getId() == (id)) {
+            	sc.nextLine();
             	System.out.println("Digite o novo Nome do Quarto: ");
                 String novoNomeQuarto = sc.nextLine();
                 altQuarto.setNomeQuarto(novoNomeQuarto);
@@ -70,6 +110,7 @@ public class QuartoMenu {
                 	altQuarto.setTemBanheiro(false);
                 }
                 
+                sc.nextLine();
                 System.out.println("Digite a nova Descricao do quarto: ");
                 String novaDescricao = sc.nextLine();
                 altQuarto.setDescricao(novaDescricao);
@@ -83,7 +124,7 @@ public class QuartoMenu {
         }
     }
     
-    public void excluirQuarto(Quarto quarto) {
+    public void excluirQuarto(Scanner sc) {
     	int id;
     	boolean encontrado = false;
     	
@@ -105,8 +146,8 @@ public class QuartoMenu {
         }
    }
 
-    public void ListarQuartos() {
+    public void listarQuartos() {
     	System.out.println("Quartos: \n");
-    	System.out.println(quartos);
+    	System.out.println(quartos.toString());
     }
 }

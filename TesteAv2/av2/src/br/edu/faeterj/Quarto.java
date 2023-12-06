@@ -56,7 +56,7 @@ public class Quarto {
 	}
 
 	public String toString() {
-		 return "\nId " + id +
+		 return "\nId: " + id +
 				 "\nNome do Quarto: " + nomeQuarto + 
 				 "\nQuantidade de Camas: " + qtdeCamas + 
 	            "\nTem banheiro: " + temBanheiro +
