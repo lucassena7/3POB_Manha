@@ -8,9 +8,10 @@
 	    private String dataEntrada;
 	    private String dataSaida;
 	    
-		public Reserva(int id, int idQuarto, String cpfCliente, String dataEntrada, String dataSaida) {
+		public Reserva(int id, int idQuarto, int idCama, String cpfCliente, String dataEntrada, String dataSaida) {
 			this.id= id; 
 			this.idQuarto = idQuarto;
+			this.idCama = idCama;
 			this.cpfCliente = cpfCliente;
 			this.dataEntrada = dataEntrada;
 			this.dataSaida = dataSaida;
