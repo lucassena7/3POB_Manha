@@ -67,7 +67,7 @@ public class Main {
         
         //instâncias de reservas
         Reserva reserva1 = new Reserva(1, 1, 4, "12345678901", "10-12-2023", "15-12-2023", "123456","07/05/2028","332");
-        Reserva reserva2 = new Reserva(2, 2, 5, "12312312312", "12-12-2023", "220-12-2023","789101" ,"09/07/2030","157");
+        Reserva reserva2 = new Reserva(2, 2, 5, "12312312312", "12-12-2023", "22-12-2023","789101" ,"09/07/2030","157");
 
         // Adicionando reservas na lista
         reservaMenu.reservas.add(reserva1);
