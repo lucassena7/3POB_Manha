@@ -5,7 +5,7 @@ package br.edu.faeterj;
 import java.util.*;
 
 public class ClienteMenu {
-    private List<Cliente> clientes = new ArrayList<>();
+    public List<Cliente> clientes = new ArrayList<>();
     private Scanner sc;
     private int opcao;
     
@@ -128,6 +128,7 @@ public class ClienteMenu {
                 String novoEmail = sc.nextLine();
                 altCliente.setEmail(novoEmail);
                 
+                System.out.println("\nCliente alterado com sucesso !");
                 encontrado = true;
                 break;
             }
@@ -150,13 +151,13 @@ public class ClienteMenu {
             
             if (cli.getCpf().equals(cpf)) {
                 clientes.remove(i); 
-                System.out.println("Aluno removido com sucesso!");
+                System.out.println("Cliente removido com sucesso!");
                 encontrado = true;
                 break;
             }
         }
         if (!encontrado) {
-       	 System.out.println("Nao foi possivel localizar um aluno com este numero de matricula");
+       	 System.out.println("Nao foi possivel localizar um Cliente com este numero de matricula");
         }
    }
     

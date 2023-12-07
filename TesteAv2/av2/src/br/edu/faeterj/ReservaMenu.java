@@ -5,7 +5,7 @@ package br.edu.faeterj;
 import java.util.*;
 
 public class ReservaMenu {
-    private List<Reserva> reservas = new ArrayList<>();
+    public List<Reserva> reservas = new ArrayList<>();
     private Scanner sc;
     int opcao;
     
@@ -54,6 +54,9 @@ public class ReservaMenu {
         String cpfCliente= "";
         String dataEntrada= "";
         String dataSaida= "";
+        String numeroCartao = "";
+        String dataValidade = "";
+        String codigoSeguranca = "";
         
         System.out.println("Digite o Id da Reserva: ");
         id = sc.nextInt();
@@ -74,7 +77,16 @@ public class ReservaMenu {
         System.out.println("Digite a Data de saida: ");
         dataSaida = sc.nextLine();
         
-        Reserva reser = new Reserva (id, idQuarto, idCama, cpfCliente, dataEntrada, dataSaida);
+        System.out.println("Digite o Número do Cartão: ");
+        numeroCartao = sc.nextLine();
+
+        System.out.println("Digite a Data de Validade (MM/AAAA): ");
+        dataValidade = sc.nextLine();
+
+        System.out.println("Digite o Código de Segurança (CVV): ");
+        codigoSeguranca = sc.nextLine();
+        
+        Reserva reser = new Reserva (id, idQuarto, idCama, cpfCliente, dataEntrada, dataSaida, numeroCartao, dataValidade, codigoSeguranca);
         
         reservas.add(reser);
         System.out.println("\nReserva feita com sucesso !");
@@ -111,6 +123,19 @@ public class ReservaMenu {
                 String novaDataS = sc.nextLine();
                 altReserva.setDataSaida(novaDataS);
                 
+                System.out.println("Digite o novo numero do Cartao: ");
+                String novoNumCartao = sc.nextLine();
+                altReserva.setNumeroCartao(novoNumCartao);
+                
+                System.out.println("Digite a nova Data de Validade: ");
+                String novaDataV = sc.nextLine();
+                altReserva.setDataValidade(novaDataV);
+                
+                System.out.println ("Digite o Código de Segurança (CVV): ");
+                String novoCVV= sc.nextLine();
+                altReserva.setCodigoSeguranca(novoCVV);
+                
+                System.out.println("\nReserva alterada com sucesso !");
                 encontrado = true;
                 break;
             }

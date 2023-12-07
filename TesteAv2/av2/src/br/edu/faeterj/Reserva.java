@@ -7,16 +7,24 @@
 	    private String cpfCliente;
 	    private String dataEntrada;
 	    private String dataSaida;
+	    private String numeroCartao;
+	    private String dataValidade;
+	    private String codigoSeguranca;
 	    
-		public Reserva(int id, int idQuarto, int idCama, String cpfCliente, String dataEntrada, String dataSaida) {
+		public Reserva(int id, int idQuarto, int idCama, String cpfCliente, String dataEntrada, String dataSaida, String numeroCartao,
+				String dataValidade, String codigoSeguranca) {
 			this.id= id; 
 			this.idQuarto = idQuarto;
 			this.idCama = idCama;
 			this.cpfCliente = cpfCliente;
 			this.dataEntrada = dataEntrada;
 			this.dataSaida = dataSaida;
+			this.numeroCartao = numeroCartao;
+			this.dataValidade = dataValidade;
+			this.codigoSeguranca = codigoSeguranca;
+			
 		}
-		
+
 		public int getId() {
 			return id;
 		}
@@ -65,6 +73,30 @@
 			this.dataSaida = dataSaida;
 		}
 		
+		public String getNumeroCartao() {
+			return numeroCartao;
+		}
+
+		public void setNumeroCartao(String numeroCartao) {
+			this.numeroCartao = numeroCartao;
+		}
+
+		public String getDataValidade() {
+			return dataValidade;
+		}
+
+		public void setDataValidade(String dataValidade) {
+			this.dataValidade = dataValidade;
+		}
+
+		public String getCodigoSeguranca() {
+			return codigoSeguranca;
+		}
+
+		public void setCodigoSeguranca(String codigoSeguranca) {
+			this.codigoSeguranca = codigoSeguranca;
+		}
+
 		public String toString() {
 			 return "\nId " + id +
 					 "\nId do Quarto: " + idQuarto + 

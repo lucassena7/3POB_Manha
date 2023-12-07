@@ -3,7 +3,7 @@ package br.edu.faeterj;
 import java.util.*;
 
 public class QuartoMenu {
-    private List<Quarto> quartos = new ArrayList<>();
+    public List<Quarto> quartos = new ArrayList<>();
     private Scanner sc; 
     private int opcao;
     
@@ -114,7 +114,8 @@ public class QuartoMenu {
                 System.out.println("Digite a nova Descricao do quarto: ");
                 String novaDescricao = sc.nextLine();
                 altQuarto.setDescricao(novaDescricao);
-                       
+                
+                System.out.println("\nQuarto alterado com sucesso !");
                 encontrado = true;
                 break;
             }

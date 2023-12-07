@@ -6,7 +6,7 @@ package br.edu.faeterj;
 import java.util.*;
 
 public class CamaMenu {
-    private List<Cama> camas = new ArrayList<>();
+    public List<Cama> camas = new ArrayList<>();
     private Scanner sc;
     private int opcao;
     
@@ -82,7 +82,7 @@ public class CamaMenu {
         Cama kama = new Cama (id, codigoCama, ehBeliche, posicao, descricao);
         
         camas.add(kama);
-        System.out.println("\nCama inserido com sucesso !");
+        System.out.println("\nCama inserida com sucesso !");
     }
    
     public void alterarCama(Scanner sc) {
@@ -116,7 +116,9 @@ public class CamaMenu {
                 System.out.println("Digite a nova Descricao da cama: ");
                 String novaDescricao = sc.nextLine();
                 altCama.setDescricao(novaDescricao);
-                       
+                
+                System.out.println("\nCama alterada com sucesso !");
+                
                 encontrado = true;
                 break;
             }
